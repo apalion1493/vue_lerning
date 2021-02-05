@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="n in evenNumbers">{{ n }}</li>
+    </ul>
+
+    <ul v-for="set in sets">
+        <li v-for="n in even(set)">{{ n }}</li>
+    </ul>
+</div>
+
+<script>
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+            numbers: [1, 2, 3, 4, 5],
+            sets: [[ 1, 2, 3, 4, 5 ], [6, 7, 8, 9, 10]]
+        },
+        methods: {
+            even: function (numbers) {
+                return numbers.filter(function (number) {
+                    return number % 2 === 0
+                })
+            }
+        },
+        computed: {
+            evenNumbers: function () {
+                return this.numbers.filter(function (number) {
+                    return number % 2 === 0
+                })
+            }
+        }
+
+    })
+
+</script>
+</body>
+</html>

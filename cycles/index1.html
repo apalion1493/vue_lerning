@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="elem of arr">{{elem}}</li>
+    </ul>
+
+    <ul>
+        <li v-for="(elem, index) of list1">{{elem}} - {{index + 1}}</li>
+    </ul>
+
+    <ul>
+        <li v-for="(elem, title, index) in list2">{{index + 1}}) {{title}} - {{elem}}</li>
+    </ul>
+
+    <ul>
+        <li v-for="elem in hrefs">
+            <a :href="elem.href">{{elem.text}}</a>
+        </li>
+    </ul>
+
+    <ul>
+        <li v-for="elem in products">
+            {{elem.name}}, цена: {{elem.price}}, количество: {{elem.quantity}}, сумма: {{elem.price * elem.quantity}}
+        </li>
+    </ul>
+
+    <ul>
+        <template v-for="elem in arr">
+            <li>text - 1</li>
+            <li>text - 2</li>
+            <li>{{elem}}</li>
+        </template>
+    </ul>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            arr: [1, 2, 3, 4, 5],
+            list1: ['user1', 'user2', 'user3'],
+            list2: {
+                employee1: '100$',
+                employee2: '200$',
+                employee3: '300$',
+            },
+            hrefs: [
+                {href: '1.html', text: 'ссылка 1'},
+                {href: '2.html', text: 'ссылка 2'},
+                {href: '3.html', text: 'ссылка 3'},
+            ],
+            products: [
+                {name: 'product1', price: 100, quantity: 5},
+                {name: 'product2', price: 200, quantity: 4},
+                {name: 'product3', price: 300, quantity: 3},
+            ]
+        },
+    })
+</script>
+
+</body>
+</html>
