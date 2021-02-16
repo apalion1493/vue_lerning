@@ -3,13 +3,13 @@
     <h1>Список продуктов</h1>
     <ul>
       <li v-for="(product, index) in products" :key="index">
-        <ProductListCard
+        <product-list-card
         :title="product.title"
         :price="product.price"
         :img-url="product.imgUrl"
         :img-alt="product.imgAlt"
         :count="product.count"
-        @addToBasket="addToBasket(index)"></ProductListCard>
+        @addToBasket="addToBasket(index)"></product-list-card>
       </li>
     </ul>
   </div>

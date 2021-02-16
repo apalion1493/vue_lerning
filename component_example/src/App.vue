@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <NavMenu></NavMenu>
-    <HelloWorld msg="Hi VUE">
+    <nav-menu></nav-menu>
+    <hello-world msg="Hi VUE">
       Какой то рандомный текст
-    </HelloWorld>
-    <BlogPost
+    </hello-world>
+    <blog-post
         v-for="post in posts"
-        v-bind:key="post.id"
-        v-bind:post="post"
-    ></BlogPost>
-    <ProductList></ProductList>
+        :key="post.id"
+        :post="post"
+    ></blog-post>
+    <product-list></product-list>
   </div>
 </template>
 
