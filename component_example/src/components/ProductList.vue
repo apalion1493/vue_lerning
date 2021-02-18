@@ -9,7 +9,7 @@
         :img-url="product.imgUrl"
         :img-alt="product.imgAlt"
         :count="product.count"
-        @addToBasket="addToBasket(index)"></product-list-card>
+        @add-to-basket="addToBasket(index)"></product-list-card>
       </li>
     </ul>
   </div>

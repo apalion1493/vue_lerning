@@ -2,7 +2,15 @@
   <div id="app">
     <nav-menu></nav-menu>
     <hello-world msg="Hi VUE">
-      Какой то рандомный текст
+      <template #text-1>
+        text 1
+      </template>
+      <template #text-3>
+        text 3
+      </template>
+      <template #text-2>
+        text 2
+      </template>
     </hello-world>
     <blog-post
         v-for="post in posts"
@@ -10,6 +18,12 @@
         :post="post"
     ></blog-post>
     <product-list></product-list>
+
+    <text-field v-model="model" label="Login"></text-field>
+    <p>{{model}}</p>
+    <div style="height: 40px;"></div>
+    <input type="text" v-model.lazy.trim="textOne">
+    <p>{{textOne}}</p>
   </div>
 </template>
 
@@ -18,6 +32,7 @@ import HelloWorld from '@/components/HelloWorld.vue';
 import NavMenu from "@/components/NavMenu";
 import BlogPost from "@/components/BlogPost";
 import ProductList from "@/components/ProductList";
+import TextField from "@/components/TextField";
 
 const APP_LOG_LIFECYCLE_EVENTS = true;
 
@@ -28,6 +43,7 @@ export default {
     NavMenu,
     BlogPost,
     ProductList,
+    TextField
   },
   data() {
     return {
@@ -35,7 +51,9 @@ export default {
         { id: 1, title: 'My journey with Vue' },
         { id: 2, title: 'Blogging with Vue' },
         { id: 3, title: 'Why Vue is so fun' }
-      ]
+      ],
+      model: '',
+      textOne: ''
     }
   },
 

@@ -4,7 +4,7 @@
     <span class="cardProduct__title">{{title}}</span>
     <span class="cardProduct__price">{{price}}</span>
     <span class="cardProduct__description">Доступно всего {{count}} штук.</span>
-    <button type="button" @click="addToBasket">Добавить в корзину</button>
+    <button type="button" @click="$emit('add-to-basket')">Добавить в корзину</button>
   </div>
 </template>
 
@@ -36,9 +36,9 @@ export default {
     }
   },
   methods: {
-    addToBasket() {
-      this.$emit('addToBasket')
-    }
+    // addToBasket() {
+    //   this.$emit('addToBasket')
+    // }
   }
 }
 </script>

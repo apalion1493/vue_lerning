@@ -1,7 +1,17 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <p><slot></slot></p>
+    <p>
+      <span class="text-1">
+        <slot name="text-1"></slot>
+      </span>
+      <span class="text-2">
+        <slot name="text-2"></slot>
+      </span>
+      <span class="text-3">
+        <slot name="text-3"></slot>
+      </span>
+    </p>
   </div>
 </template>
 
