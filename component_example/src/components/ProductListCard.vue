@@ -1,7 +1,7 @@
 <template>
   <div class="cardProduct">
     <img class="cardProduct__img" :src="imgUrl" :alt="imgAlt">
-    <span class="cardProduct__title">{{title}}</span>
+    <a href="" @click="$router.push(`product/${id}`)" class="cardProduct__title">{{title}}</a>
     <span class="cardProduct__price">{{price}}</span>
     <span class="cardProduct__description">Доступно всего {{count}} штук.</span>
     <button type="button" @click="$emit('add-to-basket')">Добавить в корзину</button>
