@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <li v-for="(item, key) in listLinks" v-bind:key="key">
-        <a href="#">{{item.linkTitle}}</a>
+        <router-link :to="item.linkUrl">{{item.linkTitle}}</router-link>
       </li>
     </ul>
   </nav>
@@ -16,14 +16,17 @@ export default {
       listLinks: [
         {
           linkTitle: 'home',
+          linkUrl: '/',
           key: 1
         },
         {
-          linkTitle: 'link 1',
+          linkTitle: 'Product List',
+          linkUrl: '/product-list',
           key: 2
         },
         {
           linkTitle: 'link 2',
+          linkUrl: '/',
           key: 3
         },
       ]
