@@ -28,7 +28,6 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld";
-
 import BlogPost from "@/components/BlogPost";
 import TextField from "@/components/TextField";
 

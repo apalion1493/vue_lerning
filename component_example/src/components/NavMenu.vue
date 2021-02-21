@@ -23,12 +23,7 @@ export default {
           linkTitle: 'Product List',
           linkUrl: '/product-list',
           key: 2
-        },
-        {
-          linkTitle: 'link 2',
-          linkUrl: '/',
-          key: 3
-        },
+        }
       ]
     }
   }

@@ -1,10 +1,12 @@
 <template>
   <div class="cardProduct">
-    <img class="cardProduct__img" :src="imgUrl" :alt="imgAlt">
-    <a href="" @click="$router.push(`product/${id}`)" class="cardProduct__title">{{title}}</a>
-    <span class="cardProduct__price">{{price}}</span>
-    <span class="cardProduct__description">Доступно всего {{count}} штук.</span>
-    <button type="button" @click="$emit('add-to-basket')">Добавить в корзину</button>
+    <img class="cardProduct__img" :src="product.imgUrl" :alt="product.imgAlt">
+    <router-link :to="{name: 'Product', params: {id: product.id}}">
+      {{product.title}}
+    </router-link>
+    <span class="cardProduct__price">{{product.price}}</span>
+    <span class="cardProduct__description">Доступно всего {{product.count}} штук.</span>
+    <button type="button">Добавить в корзину</button>
   </div>
 </template>
 
@@ -12,34 +14,10 @@
 export default {
   name: 'ProductListCard',
   props: {
-    imgAlt: {
-      type: String,
-      default: 'Описание картинки'
-    },
-    imgUrl: {
-      type: String,
-      default: 'NoPhoto.png'
-    },
-    title: {
-      type: String,
-      validator(value) {
-        return value.length < 30
-      }
-    },
-    price: {
-      type: Number,
-      required: true
-    },
-    count: {
-      type: Number,
-      default: 0
+    product: {
+      type: Object
     }
   },
-  methods: {
-    // addToBasket() {
-    //   this.$emit('addToBasket')
-    // }
-  }
 }
 </script>
 
@@ -49,7 +27,8 @@ export default {
     flex-direction: column;
     border: 1px solid black;
     padding: 20px;
-    width: 100%;
+    width: 60%;
+    margin-bottom: 30px;
   }
 
   .cardProduct__img {
