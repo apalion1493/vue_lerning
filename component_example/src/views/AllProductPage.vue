@@ -6,7 +6,7 @@
 </template>
 <script>
 import ProductList from "@/components/ProductList";
-import products from "../listData/products";
+import products from "@/listData/products";
 
 export default {
   components: {ProductList},
